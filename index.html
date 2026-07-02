@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HIMS — Patient Intake</title>
+    <meta name="description" content="Hospital Information Management System — Patient Registration" />
+    <link rel="icon" type="image/svg+xml" href="/hims-icon.svg" />
+    <!--
+      ╔══════════════════════════════════════════════════════════════╗
+      ║  SECURITY HEADERS NOTE                                       ║
+      ║  X-Frame-Options, X-Content-Type-Options, HSTS, and the     ║
+      ║  Content-Security-Policy frame-ancestors directive CANNOT    ║
+      ║  be enforced via <meta> tags. They MUST be set by the        ║
+      ║  server (nginx.conf). See /nginx.conf in this package.       ║
+      ║  The CSP below only covers resource-loading policy for       ║
+      ║  browsers that support meta CSP (partial support).           ║
+      ╚══════════════════════════════════════════════════════════════╝
+    -->
+    <!--
+      Fonts are self-hosted in /public/fonts/ — NO Google Fonts CDN calls.
+      This prevents third-party IP tracking of patient browsing sessions.
+    -->
+    <style>
+      /* Self-hosted Inter font — no external CDN calls */
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('/fonts/inter-400.woff2') format('woff2'),
+             url('/fonts/inter-400.woff')  format('woff');
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url('/fonts/inter-500.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url('/fonts/inter-600.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url('/fonts/inter-700.woff2') format('woff2'),
+             url('/fonts/inter-700.woff')  format('woff');
+      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
